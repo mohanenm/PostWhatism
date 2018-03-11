@@ -66,8 +66,8 @@
       <file leaf-file-name="westernPhil.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../n-gram-lm/westernPhil.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="29228" column="2" lean-forward="false" selection-start-line="29228" selection-start-column="2" selection-end-line="29228" selection-end-column="2" />
+            <state relative-caret-position="213">
+              <caret line="24612" column="35" lean-forward="false" selection-start-line="24612" selection-start-column="35" selection-end-line="24612" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -515,8 +515,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../n-gram-lm/westernPhil.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="29228" column="2" lean-forward="false" selection-start-line="29228" selection-start-column="2" selection-end-line="29228" selection-end-column="2" />
+        <state relative-caret-position="213">
+          <caret line="24612" column="35" lean-forward="false" selection-start-line="24612" selection-start-column="35" selection-end-line="24612" selection-end-column="35" />
           <folding />
         </state>
       </provider>
