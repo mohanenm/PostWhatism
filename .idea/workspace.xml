@@ -13,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="python-bot.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="python-bot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/python-bot.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -28,8 +28,8 @@
       <file leaf-file-name="russelMath.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/russelMath.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335910">
-              <caret line="22394" column="24" lean-forward="false" selection-start-line="22394" selection-start-column="24" selection-end-line="22394" selection-end-column="24" />
+            <state relative-caret-position="318">
+              <caret line="23947" column="0" lean-forward="false" selection-start-line="23947" selection-start-column="0" selection-end-line="23947" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -50,6 +50,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
               <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="westPhil.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../n-gram-lm/westPhil.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29228" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="westernPhil.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../n-gram-lm/westernPhil.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="29228" column="2" lean-forward="false" selection-start-line="29228" selection-start-column="2" selection-end-line="29228" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -76,13 +96,14 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
         <option value="$PROJECT_DIR$/venv/freudCompleteWorks.txt" />
         <option value="$PROJECT_DIR$/venv/shakeComplete.txt" />
-        <option value="$PROJECT_DIR$/venv/russelMath.txt" />
         <option value="$PROJECT_DIR$/venv/example.py" />
         <option value="$PROJECT_DIR$/venv/python-bot.py" />
+        <option value="$PROJECT_DIR$/venv/russelMath.txt" />
+        <option value="$PROJECT_DIR$/../n-gram-lm/westernPhil.txt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="74" />
     <option name="y" value="33" />
     <option name="width" value="1284" />
@@ -190,10 +211,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="74" y="33" width="1284" height="750" extended-state="1" />
+    <frame x="74" y="33" width="1284" height="750" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26972625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26972625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281471" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -462,14 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/russelMath.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335910">
-          <caret line="22394" column="24" lean-forward="false" selection-start-line="22394" selection-start-column="24" selection-end-line="22394" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/shakeComplete.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558090">
@@ -482,6 +495,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/russelMath.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="23947" column="0" lean-forward="false" selection-start-line="23947" selection-start-column="0" selection-end-line="23947" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../n-gram-lm/westPhil.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29228" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../n-gram-lm/westernPhil.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="29228" column="2" lean-forward="false" selection-start-line="29228" selection-start-column="2" selection-end-line="29228" selection-end-column="2" />
           <folding />
         </state>
       </provider>
