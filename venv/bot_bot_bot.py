@@ -2,12 +2,14 @@ import os
 import time
 import re
 import collections
+import nltk
+from nltk import word_tokenize
 from markovbot import MarkovBot
 
 bot = MarkovBot()
 bot2 = MarkovBot()
 bot3 = MarkovBot()
-
+bot4 = MarkovBot()
 ''' 
 clean data for shakespeare
 
@@ -37,9 +39,24 @@ russellText = os.path.join(dirname, 'russelMath.txt')
 bot3.read(russellText)
 russellTweets = bot3.generate_text(25)
 
+west_phil_text = os.path.join(dirname, 'westPhil.txt')
+
+
+data = open("westPhil.txt", 'r').read()
+fTwo = (re.sub('[0-9\W]+', " ", data))
+fThree = (fTwo.replace("SCENE", " "))
+fFour = (fThree.replace("ACT", " "))
+final_data = fFour
+tokens = word_tokenize(final_data)
+tokens_final = [item.lower() for item in tokens]
+bot4.read(tokens_final)
+westp_text = bot4.generate_text(25)
+
+
 print(freudTweets)
 print(shakeTweets)
 print(russellTweets)
+print(westp_text)
 '''
 Keys/Tokens: 
 '''
@@ -54,7 +71,12 @@ Login, tweet-period
 bot.twitter_login(cons_key, cons_secret, access_token, access_token_secret)
 bot.twitter_tweeting_start(days=0, hours=5, minutes=0, keywords=None, prefix=None, suffix = "#Freud")
 bot2.twitter_login(cons_key, cons_secret, access_token, access_token_secret)
-bot2.twitter_tweeting_start(days=0, hours=5, minutes=0, keywords=None, prefix=None, suffix = "#ShakeSpeare")
+bot2.twitter_tweeting_start(days=0, hours=5, minutes=0, keywords=None, prefix=None, suffix = "#Shakespeare")
 bot3.twitter_login(cons_key, cons_secret, access_token, access_token_secret)
 bot3.twitter_tweeting_start(days=0, hours=5, minutes=0, keywords=None, prefix=None, suffix = "#Russell")
+bot4.twitter_login(cons_key, cons_secret, access_token, access_token_secret)
+bot4.twitter_tweeting_start(days=0, hours=5, minutes=0, keywords=None, prefix=None, suffix = "#WesternPhilosophy")
 time.sleep(6400)
+
+
+print(west_phil_text)
