@@ -48,8 +48,7 @@ fThree = (fTwo.replace("SCENE", " "))
 fFour = (fThree.replace("ACT", " "))
 final_data = fFour
 tokens = word_tokenize(final_data)
-tokens_final = [item.lower() for item in tokens]
-bot4.read(tokens_final)
+bot4.read(tokens)
 westp_text = bot4.generate_text(25)
 
 
