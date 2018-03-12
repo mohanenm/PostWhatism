@@ -40,15 +40,7 @@ bot3.read(russellText)
 russellTweets = bot3.generate_text(25)
 
 west_phil_text = os.path.join(dirname, 'westPhil.txt')
-
-
-data = open("westPhil.txt", 'r').read()
-fTwo = (re.sub('[0-9\W]+', " ", data))
-fThree = (fTwo.replace("SCENE", " "))
-fFour = (fThree.replace("ACT", " "))
-final_data = fFour
-tokens = word_tokenize(final_data)
-bot4.read(tokens)
+bot4.read(west_phil_text)
 westp_text = bot4.generate_text(25)
 
 
