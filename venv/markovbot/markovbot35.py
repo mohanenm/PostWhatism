@@ -32,7 +32,6 @@ from multiprocessing import Queue
 # external imports
 # Twitter package: https://pypi.python.org/pypi/twitter
 # Homepage of Twitter package: http://mike.verdone.ca/twitter/
-import re
 try:
     import twitter
 
@@ -373,18 +372,10 @@ class MarkovBot():
         if not self._check_file(filename):
             self._error(u'read', u"File does not exist: '%s'" % (filename))
 
-
         # Read the words from the file as one big string
         with open(filename, u'r') as f:
-            f.lower()
             # Read the contents of the file
-            #run regex on  'big string'
             contents = f.read()
-            ftwo = (re.sub('[0-9\W]+', " ", contents))
-            fthree = (ftwo.replace("SCENE", " "))
-            ffour = (fthree.replace("ACT", " "))
-            contents = ffour
-
         # Unicodify the contents
         contents = contents
         # .decode(u'utf-8')
