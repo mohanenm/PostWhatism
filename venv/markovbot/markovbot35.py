@@ -373,6 +373,8 @@ class MarkovBot():
             self._error(u'read', u"File does not exist: '%s'" % (filename))
 
         # Read the words from the file as one big string
+        # this is where I need to implement the lambda expressions or the regex check!!!!!!
+        # should open issue for this !!!
         with open(filename, u'r') as f:
             # Read the contents of the file
             contents = f.read()
