@@ -44,7 +44,7 @@ bot4.read(west_phil_text)
 westp_text = bot4.generate_text(25)
 
 
-print(freudTweets)
+print(freudTweets)t
 print(shakeTweets)
 print(russellTweets)
 print(westp_text)
