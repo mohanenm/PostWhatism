@@ -19,6 +19,9 @@ cons_secret ='sIfuEEp6T8qluDkU3S9PLcINoIIqcp0SUTrnwVfvdWhNRlIS6G'
 access_token ='863265431691436032-PH9ASi1r3tfXJY90i4HuCVVpcLhUJ6D'
 access_token_secret ='POslJ4RgWsgL7BzUV1WY7xZaI9YXGMmSIFPwA2vcZt1Uf'
 
+''' considering splliting the calls and actual function to put 
+    them into Panda DF; it could get rather messy without it!
+'''
 api = twitter.Api(
     cons_key         =   twitter_keys['cons_key'],
     cons_secret      =   twitter_keys['cons_secret'],
@@ -28,12 +31,33 @@ api = twitter.Api(
 )
 type(api)
 
-nietzsche_tweets = api.GetHashTag(screen_name="#nietzsche", count=200, include_rts=False)
-nietzsche_tweets = [_.AsDict() for _ in nietzsche_tweets]
-for element in x:
+
+'''get tweets according to some hash tag, in our case
+   get tweets on the basis of the authors, which were 
+   analyzed and had tweets generated for in the markov
+   model!
+'''
+
+''' X ==> rows: panda df'''
+nietzsche_x = api.GetHashTag(hash_tag="nietzsche", count=200, include_rts=False)
+nietzsche_x = [_.AsDict() for _ in nietzsche_x]
+for element in nietzsche_x:
     print(element['id'])
     print(element['full_text'])
     print('--')
+
+''' Y ==> rows: panda df'''
+nietzsche_y = api.GetUserTimeline(hash_tag="nietzsche", count=20, max_id=935706980643147777, include_rts=False)
+nietzsche_y = [_.AsDict() for _ in nietzsche_y]
+for element in nietzsche_y:
+    print(element['id'])
+    print(element['full_text'])
+    print('--')
+
+
+
+
+
 
 class GetTweets(object):
 
