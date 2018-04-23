@@ -5,7 +5,6 @@ import datetime
 
 ''' Various things are changed to fit our model/objective'''
 
-
 class TweetMiner(object):
 
     def __init__(self, api, result_limit=20):

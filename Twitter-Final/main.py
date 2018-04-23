@@ -1,4 +1,7 @@
-From miner importTweetMiner as TweetMiner
+from classes.miner import TweetMiner
+from miner import TweetMiner
+'''fixed import issue!'''
+
 import os
 import time
 import re
@@ -60,7 +63,7 @@ for element in nietzsche_y:
 ''' should return "dict"  --> '''
 type(nietzsche_y[0])
 ''' should return item of the dict  --> '''
-nietzsche_y[0]['id']
+print(nietzsche_y[0]['id'])
 
 # Result limit == count parameter from our GetUserTimeline()
 
@@ -131,13 +134,11 @@ tokens = word_tokenize()
 from textacy.preprocess import preprocess_text
 
 # def clean_text():
-tweet_text = summaries['text'].values
+tweet_text = summaries['text'].
 clean_NLTK_text = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True, no_phone_numbers=True, no_currency_symbols=True,no_punct=True, no_accents=True)
               for x in tweet_text]
 
 print(tweet_text)
-
-
 
 tfv = TfidfVectorizer(ngram_range=(2,4), max_features=2000)
 X = tfv.fit_transform(clean_NLTK_text).todense()
