@@ -1,14 +1,17 @@
+From miner importTweetMiner as TweetMiner
 import os
 import time
 import re
 import collections
 import nltk
 from nltk import word_tokenize
-from markovbot import MarkovBot
+# from markovbot import MarkovBot
 import numpy as np
 import twitter, re, datetime, pandas as pd
-from miner.py import TweetMiner
-frin
+
+
+
+
 
 '''idea for "tweet miner from mike roman via: git_userid = elaiken3'''
 
@@ -67,6 +70,8 @@ freud_tweets = miner.mine_user_tweets(hashtag="freud")
 russel_tweets = miner.mine_user_tweets(hashtag="russel")
 west_phil_tweets = miner.mine_user_tweets(hashtag="westernphilosophy")
 
+
+'''IF YOU WANT TO SEE THEM PRINTED: UNCOMMENT!
 for x in range(5):
     print(nietzsche_tweets[x]['text'])
     print('---')
@@ -79,7 +84,9 @@ for x in range(5):
 for x in range(5):
     print(west_phil_tweets[x]['text'])
     print('---')
+'''
 
+''' PUT TWEETS INTO A DATAFRAME!'''
 nietz_dataframe = pd.DataFrame(nietzsche_tweets)
 freud_dataframe = pd.DataFrame(freud_tweets)
 russel_dataframe = pd.DataFrame(russel_tweets)
@@ -93,13 +100,47 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 
-# We can use the TfidfVectorizer to find ngrams for us
+# TfidfVectorizer to find ngrams!
 vect = TfidfVectorizer(ngram_range=(2,5), stop_words='english')
-
-# Pulls all of trumps tweet text's into one giant string
+# One giant string of all tweets! -- > nietz
 summaries = "".join(nietz_dataframe['text'])
 ngrams_summaries = vect.build_analyzer()(summaries)
+Counter(ngrams_summaries).most_common(200)
+vect = TfidfVectorizer(ngram_range=(2,5), stop_words='english')
 
-Counter(ngrams_summaries).most_common(20)
+# One giant string of all tweets! --> freud
+summaries = "".join(freud_dataframe['text'])
+ngrams_summaries = vect.build_analyzer()(summaries)
+Counter(ngrams_summaries).most_common(200)
+vect = TfidfVectorizer(ngram_range=(2,5), stop_words='english')
+
+# One giant string of all tweets! --> russel
+summaries = "".join(russel_dataframe['text'])
+ngrams_summaries = vect.build_analyzer()(summaries)
+Counter(ngrams_summaries).most_common(200)
+vect = TfidfVectorizer(ngram_range=(2,5), stop_words='english')
+
+# One giant string of all tweets! --> west phil
+summaries = "".join(westPhil_dataframe['text'])
+ngrams_summaries = vect.build_analyzer()(summaries)
+Counter(ngrams_summaries).most_common(200)
+
+from nltk.tokenize import word_tokenize
+tokens = word_tokenize()
+# stemming of words -- > cleaning text finally
+from textacy.preprocess import preprocess_text
+
+# def clean_text():
+tweet_text = summaries['text'].values
+clean_NLTK_text = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True, no_phone_numbers=True, no_currency_symbols=True,no_punct=True, no_accents=True)
+              for x in tweet_text]
+
+print(tweet_text)
+
+
+
+tfv = TfidfVectorizer(ngram_range=(2,4), max_features=2000)
+X = tfv.fit_transform(clean_NLTK_text).todense()
+print(X.shape)
 
 ''' Just spent > 30 minutes trying to git pip install to trust scikit download!'''
