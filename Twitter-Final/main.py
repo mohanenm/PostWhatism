@@ -54,19 +54,13 @@ for element in nietzsche_y:
     print(element['full_text'])
     print('--')
 
+''' should return "dict"  --> '''
+type(nietzsche_y[0])
+''' should return item of the dict  --> '''
+nietzsche_y[0]['id']
 
 
 
-
-
-class GetTweets(object):
-
-
-    def__init__(self, api, tweet_limit = 200):
-
-
-    self.api = api
-    self.result_limit = tweet_limit
 
 
 
