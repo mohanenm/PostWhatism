@@ -1,9 +1,11 @@
 # idea for, and implementation of "tweet miner from mike roman via: git_userid = elaiken3
 # TweetMiner function from Mike Roman
 
-
+import datetime
 
 ''' Various things are changed to fit our model/objective'''
+
+
 class TweetMiner(object):
 
     def __init__(self, api, result_limit=20):
@@ -11,7 +13,7 @@ class TweetMiner(object):
         self.api = api
         self.result_limit = result_limit
 
-    def mine_user_tweets(self, user="HillaryClinton", mine_retweets=False, max_pages=20):
+    def mine_user_tweets(self, hash_tag="nietzsche", mine_retweets=False, max_pages=200):
 
         data = []
         last_tweet_id = False
@@ -20,11 +22,11 @@ class TweetMiner(object):
         while page <= max_pages:
 
             if last_tweet_id:
-                statuses = self.api.GetUserTimeline(hashtag=user, count=self.result_limit, max_id=last_tweet_id - 1,
+                statuses = self.api.GetUserTimeline(hashtag=hash_tag, count=self.result_limit, max_id=last_tweet_id - 1,
                                                     include_rts=mine_retweets)
                 statuses = [_.AsDict() for _ in statuses]
             else:
-                statuses = self.api.GetUserTimeline(screen_name=user, count=self.result_limit,
+                statuses = self.api.GetUserTimeline(hashtag=hash_tag, count=self.result_limit,
                                                     include_rts=mine_retweets)
                 statuses = [_.AsDict() for _ in statuses]
 
