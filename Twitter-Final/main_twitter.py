@@ -1,4 +1,4 @@
-import main_twitter
+import twitter_access
 
 '''fixed import issue!'''
 
@@ -12,9 +12,12 @@ from nltk import word_tokenize
 import numpy as np
 import re, datetime, pandas as pd
 
-final_main = main_twitter.final_tweets
 
-print(final_main)
+final_tweets = twitter_access.tweet_galore.results
+
+
+
+print(final_tweets)
 
 ''' PUT TWEETS INTO A DATAFRAME!'''
 nietz_dataframe = pd.DataFrame(nietzsche_tweets)
@@ -62,7 +65,7 @@ from textacy.preprocess import preprocess_text
 
 # def clean_text():
 tweet_text = summaries['text'].values
-clean_NLTK_text = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True, no_phone_numbers=True, no_currency_symbols=True,no_punct=True, no_accents=True)
+clean_NLTK_text = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True, no_phone_numbers=True, no_currency_symbols=True, no_punct=True, no_accents=True)
               for x in tweet_text]
 
 print(tweet_text)

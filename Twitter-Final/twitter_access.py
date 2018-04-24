@@ -16,7 +16,7 @@ try:
 except ImportError:
     import simplejson as json
 
-from twitter import *
+
 
 '''idea for "tweet miner from mike roman via: git_userid = elaiken3'''
 
@@ -33,11 +33,29 @@ auth = tweepy.OAuthHandler(cons_key, cons_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
+class tweets_galore(tweepy.Cursor):
 
-class tweetStreamer(tweepy.StreamListener):
 
+    results = []
+    # Get the first 1000 items based on the search query and store it
+    for tweet in tweepy.Cursor(api.search, hash_tag='%23nietzsche').items(20):
+        results.append(tweet)
+
+    for tweet in tweepy.Cursor(api.search, hash_tag='%23freud').items(20):
+        results.append(tweet)
+
+    for tweet in tweepy.Cursor(api.search, hash_tag='%23russel').items(20):
+        results.append(tweet)
+
+    for tweet in tweepy.Cursor(api.search, hash_tag='%23westernphil').items(20):
+        results.append(tweet)
+
+
+
+
+'''
     def on_status(self, status):
-        final_tweets = status.text
+       status.text
 
     def on_error(self, status_code):
         if status_code == 420:
@@ -50,7 +68,4 @@ class tweetStreamer(tweepy.StreamListener):
     stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
     stream.filter(track=["#nietzsche", "#freud", "#russel", "#westernphilosophy"])
 
-    def on_status(self, status):
-        if status.favorite_count is None or status.favorite_count < 10:
-            return
-        status.text
+'''
