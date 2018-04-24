@@ -1,5 +1,5 @@
-from classes.miner import TweetMiner
-from miner import TweetMiner
+import miner
+
 '''fixed import issue!'''
 
 import os
@@ -10,17 +10,18 @@ import nltk
 from nltk import word_tokenize
 # from markovbot import MarkovBot
 import numpy as np
-import twitter, re, datetime, pandas as pd
-
-
-
-
+import re, datetime, pandas as pd
+import twitter
+from tweepy import Stream
+from tweepy.streaming import StreamListener
 
 '''idea for "tweet miner from mike roman via: git_userid = elaiken3'''
 
 '''
 Keys/Tokens: DO NOT PUSH THESE!
 '''
+
+
 cons_key = 'TRXh3CDSFBnPuZziANbqssl1l'
 cons_secret = 'sIfuEEp6T8qluDkU3S9PLcINoIIqcp0SUTrnwVfvdWhNRlIS6G'
 access_token = '863265431691436032-PH9ASi1r3tfXJY90i4HuCVVpcLhUJ6D'
@@ -29,49 +30,74 @@ access_token_secret = 'POslJ4RgWsgL7BzUV1WY7xZaI9YXGMmSIFPwA2vcZt1Uf'
 ''' considering splliting the calls and actual function to put 
     them into Panda DF; it could get rather messy without it!
 '''
-api = twitter.Api(
-    cons_key=twitter_keys['cons_key'],
-    cons_secret=twitter_keys['cons_secret'],
-    access_token=twitter_keys['access_token'],
-    access_token_secret=twitter_keys['access_token_secret'],
-    tweet_mode='extended'
-)
-type(api)
+
+api = twitter.Api(consumer_key=cons_key, consumer_secret=cons_secret, access_token_key=access_token,
+                   access_token_secret=access_token_secret)
+
+'''
+auth = OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_secret)
+
+api = twitter.API(auth)
+'''
+
+#This is a basic listener that just prints received tweets to stdout.
+class StdOutListener(StreamListener):
+
+    def on_data(self, data):
+        print(data)
+        return True
+
+    def on_error(self, status):
+        print(status)
+
+
+if __name__ == '__main__':
+
+    #This handles Twitter authetification and the connection to Twitter Streaming API
+    tweets_final = StdOutListener()
+    auth = OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+    stream = Stream(auth, l)
+
+    #This line filter Twitter Streams to capture data by the keywords: 'python', 'javascript', 'ruby'
+    stream.filter(track=["#nietzsche", "#freud", "#russel", "#westernphilosophy"])
 
 '''get tweets according to some hash tag, in our case
    get tweets on the basis of the authors, which were 
    analyzed and had tweets generated for in the markov
    model!
 '''
-
-''' X ==> rows: panda df'''
-nietzsche_x = api.GetHashTag(hashtag="nietzsche", count=200, include_rts=False)
+''' tweet miner pretty much does this all for us == >
+# X ==> rows: panda df
+nietzsche_x = api.GetStreamFilter(hashtag="nietzsche", count=200, include_rts=False)
 nietzsche_x = [_.AsDict() for _ in nietzsche_x]
 for element in nietzsche_x:
     print(element['id'])
     print(element['full_text'])
     print('--')
 
-''' Y ==> rows: panda df'''
-nietzsche_y = api.GetUserTimeline(hashtag="nietzsche", count=20, max_id=935706980643147777, include_rts=False)
+#Y ==> rows: panda df
+nietzsche_y = api.GetStreamFilter(hashtag="nietzsche", count=20, max_id=935706980643147777, include_rts=False)
 nietzsche_y = [_.AsDict() for _ in nietzsche_y]
 for element in nietzsche_y:
     print(element['id'])
     print(element['full_text'])
     print('--')
+'''
 
 ''' should return "dict"  --> '''
-type(nietzsche_y[0])
+#type(nietzsche_y[0])
 ''' should return item of the dict  --> '''
-print(nietzsche_y[0]['id'])
+#print(nietzsche_y[0]['id'])
 
 # Result limit == count parameter from our GetUserTimeline()
 
-miner = TweetMiner(api, result_limit=200)
-nietzsche_tweets = miner.mine_user_tweets(hashtag="nietzsche")
-freud_tweets = miner.mine_user_tweets(hashtag="freud")
-russel_tweets = miner.mine_user_tweets(hashtag="russel")
-west_phil_tweets = miner.mine_user_tweets(hashtag="westernphilosophy")
+miner = miner.TweetMiner(api, result_limit=200)
+nietzsche_tweets = miner.mine_hash_tags(track="nietzsche")
+freud_tweets = miner.mine_hash_tags(track="freud")
+russel_tweets = miner.mine_hash_tags(track="russel")
+west_phil_tweets = miner.mine_hash_tags(track="westernphilosophy")
 
 
 '''IF YOU WANT TO SEE THEM PRINTED: UNCOMMENT!
@@ -134,7 +160,7 @@ tokens = word_tokenize()
 from textacy.preprocess import preprocess_text
 
 # def clean_text():
-tweet_text = summaries['text'].
+tweet_text = summaries['text'].values
 clean_NLTK_text = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True, no_phone_numbers=True, no_currency_symbols=True,no_punct=True, no_accents=True)
               for x in tweet_text]
 

@@ -1,18 +1,47 @@
-# idea for, and implementation of "tweet miner from mike roman via: git_userid = elaiken3
-# TweetMiner function from Mike Roman
-
+# TweetMiner function from Mike Roman; changed to help work in our case==> hashtags
 import datetime
 
+# idea for, and implementation of "tweet miner from mike roman via: git_userid = elaiken3
 ''' Various things are changed to fit our model/objective'''
 
-class TweetMiner(object):
+#Import the necessary methods from tweepy library
+from tweepy.streaming import StreamListener
+from tweepy import OAuthHandler
+from tweepy import Stream
 
-    def __init__(self, api, result_limit=20):
+#Variables that contains the user credentials to access Twitter API
+access_token = "ENTER YOUR ACCESS TOKEN"
+access_token_secret = "ENTER YOUR ACCESS TOKEN SECRET"
+consumer_key = "ENTER YOUR API KEY"
+consumer_secret = "ENTER YOUR API SECRET"
 
-        self.api = api
-        self.result_limit = result_limit
 
-    def mine_user_tweets(self, hash_tag="nietzsche", mine_retweets=False, max_pages=200):
+#This is a basic listener that just prints received tweets to stdout.
+class StdOutListener(StreamListener):
+
+    def on_data(self, data):
+        print(data)
+        return True
+
+    def on_error(self, status):
+        print(status)
+
+
+if __name__ == '__main__':
+
+    #This handles Twitter authetification and the connection to Twitter Streaming API
+    l = StdOutListener()
+    auth = OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+    stream = Stream(auth, l)
+
+    #This line filter Twitter Streams to capture data by the keywords: 'python', 'javascript', 'ruby'
+    stream.filter(track=['python', 'javascript', 'ruby'])
+
+''' 
+        hash_tags = [
+            "nietzsche", "freud", "russel", "westernphilosophy"
+        ]
 
         data = []
         last_tweet_id = False
@@ -21,12 +50,10 @@ class TweetMiner(object):
         while page <= max_pages:
 
             if last_tweet_id:
-                statuses = self.api.GetUserTimeline(hashtag=hash_tag, count=self.result_limit, max_id=last_tweet_id - 1,
-                                                    include_rts=mine_retweets)
+                statuses = self.api.GetStreamFilter(track) #count=self.result_limit, max_id=last_tweet_id - 1, include_rts=mine_retweets)
                 statuses = [_.AsDict() for _ in statuses]
             else:
-                statuses = self.api.GetUserTimeline(hashtag=hash_tag, count=self.result_limit,
-                                                    include_rts=mine_retweets)
+                statuses = self.api.GetStreamFilter(track) #count=self.result_limit, include_rts=mine_retweets)
                 statuses = [_.AsDict() for _ in statuses]
 
             for item in statuses:
@@ -58,3 +85,5 @@ class TweetMiner(object):
             page += 1
 
         return data
+
+'''
