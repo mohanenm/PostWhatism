@@ -30,15 +30,18 @@ russel_tweets = twitter_access.tweets_galore.tweet2
 from textacy.preprocess import preprocess_text
 # def clean_text():
 tweet_text = nietzsche_tweets
-clean_text = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True, no_phone_numbers=True, no_currency_symbols=True, no_punct=True, no_accents=True)
+clean_text = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True,
+                              no_phone_numbers=True, no_currency_symbols=True, no_punct=True, no_accents=True)
               for x in tweet_text]
 
 tweet_text0 = freud_tweets
-clean_text0 = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True, no_phone_numbers=True, no_currency_symbols=True, no_punct=True, no_accents=True)
+clean_text0 = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True,
+                               no_phone_numbers=True, no_currency_symbols=True, no_punct=True, no_accents=True)
               for x in freud_tweets]
 
 tweet_text1 = russel_tweets
-clean_text1 = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True, no_phone_numbers=True, no_currency_symbols=True, no_punct=True, no_accents=True)
+clean_text1 = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True,
+                               no_phone_numbers=True, no_currency_symbols=True, no_punct=True, no_accents=True)
               for x in russel_tweets]
 
 
