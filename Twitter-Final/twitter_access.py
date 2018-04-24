@@ -31,24 +31,30 @@ access_token_secret = 'POslJ4RgWsgL7BzUV1WY7xZaI9YXGMmSIFPwA2vcZt1Uf'
 
 auth = tweepy.OAuthHandler(cons_key, cons_secret)
 auth.set_access_token(access_token, access_token_secret)
+
 api = tweepy.API(auth)
 
+'''
+auth = tweepy.OAuthHandler(cons_key, cons_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
+'''
 class tweets_galore(tweepy.Cursor):
 
 
     results = []
     # Get the first 1000 items based on the search query and store it
-    for tweet in tweepy.Cursor(api.search, hash_tag='%23nietzsche').items(20):
-        results.append(tweet)
+    for tweet in tweepy.Cursor(api.search, q='%23nietzsche').items(20):
+        results.append(tweet.text)
 
-    for tweet in tweepy.Cursor(api.search, hash_tag='%23freud').items(20):
-        results.append(tweet)
+    for tweet1 in tweepy.Cursor(api.search, q='%23freud').items(20):
+        results.append(tweet1.text)
 
-    for tweet in tweepy.Cursor(api.search, hash_tag='%23russel').items(20):
-        results.append(tweet)
+    for tweet2 in tweepy.Cursor(api.search, q='%23russel').items(20):
+        results.append(tweet2.text)
 
-    for tweet in tweepy.Cursor(api.search, hash_tag='%23westernphil').items(20):
-        results.append(tweet)
+    for tweet3 in tweepy.Cursor(api.search, q='%23westernphil').items(20):
+        results.append(tweet3.text)
 
 
 
