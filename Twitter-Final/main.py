@@ -171,3 +171,54 @@ X = tfv.fit_transform(clean_NLTK_text).todense()
 print(X.shape)
 
 ''' Just spent > 30 minutes trying to git pip install to trust scikit download!'''
+
+
+
+'''
+import ast
+
+results = []
+# Get the first 1000 items based on the search query and store it
+
+for data in tweepy.Cursor(api.search, q='%23nietzsche').items(20):
+    tweet = json.load(data)
+    for status in tweet:
+        tweet.append(status)
+    print(tweet["text"])
+
+for tweet in tweepy.Cursor(api.search, tweet_mode="extended", id=None, q='%23nietzsche', ).items(20):
+    json.loads(tweet)
+    tweet = ast.literal_eval(tweet)
+    results.append(tweet)
+
+for tweet1 in tweepy.Cursor(api.search, tweet_mode="extended", id=None, q='%23freud').items(20):
+    json.loads(tweet1)
+    tweet1 = ast.literal_eval(tweet1)
+    results.append(tweet1)
+
+for tweet2 in tweepy.Cursor(api.search, tweet_mode="extended", id=None, q='%23russel').items(20):
+    json.loads(tweet2)
+    tweet3 = ast.literal_eval(tweet2)
+    results.append(tweet2)
+
+for tweet3 in tweepy.Cursor(api.search, tweet_mode="extended", id=None, q='%23westernphil').items(20):
+    json.loads(tweet3)
+    tweet3 = ast.literal_eval(tweet3)
+    results.append(tweet3)
+
+
+    def on_status(self, status):
+       status.text
+
+    def on_error(self, status_code):
+        if status_code == 420:
+            return False
+
+        # This handles Twitter authetification and the connection to Twitter Streaming API
+        # This line filter Twitter Streams to capture data by the keywords
+
+    stream_listener = StreamListener()
+    stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
+    stream.filter(track=["#nietzsche", "#freud", "#russel", "#westernphilosophy"])
+
+'''

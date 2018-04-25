@@ -9,13 +9,9 @@ import numpy as np
 import re, datetime, pandas as pd
 import twitter
 import tweepy
+from TwitterSearch import *
 from tweepy.parsers import JSONParser
 from tweepy.streaming import StreamListener
-
-try:
-    import json
-except ImportError:
-    import simplejson as json
 
 '''idea for "tweet miner from mike roman via: git_userid = elaiken3'''
 
@@ -30,7 +26,7 @@ access_token_secret = 'POslJ4RgWsgL7BzUV1WY7xZaI9YXGMmSIFPwA2vcZt1Uf'
 
 auth = tweepy.OAuthHandler(cons_key, cons_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
+api = tweepy.API(auth)
 
 '''
 auth = tweepy.OAuthHandler(cons_key, cons_secret)
@@ -38,52 +34,61 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 '''
 
+class tweets_galore(TwitterSearch):
 
-class tweets_galore(tweepy.Cursor):
+ try:
+    tso = TwitterSearchOrder()  # create a TwitterSearchOrder object
+    tso.set_keywords(['#nietzsche', '-filter:retweets', '-filter:replies'])  # let's define all words we would like to have a look for
+    tso.set_language('en')  # we want to see english only
+    tso.set_include_entities(False)  # and don't give us all those entity information
+    tso.set_count(10)
+    tso.set_link_filter()  # filter hyper links
+    result_nietz = []
 
-    import ast
-    results = []
-    # Get the first 1000 items based on the search query and store it
+    ts = TwitterSearch(cons_key, cons_secret, access_token, access_token_secret)
 
-for tweet in tweepy.Cursor(api.search, q='%23nietzsche', parser=tweepy.parsers.JSONParser()).items(20):
-    [json.dumps(tweet) for tweet in tweet]
-    print(tweet)
+    for tweet in ts.search_tweets_iterable(tso):
+        tweets = tweet['text']
+        result_nietz.append(tweets)
+
+ except TwitterSearchException as e:  # take care of all those ugly errors if there are some
+    print(e)
 
 
-for tweet in tweepy.Cursor(api.search, tweet_mode="extended", id=None, q='%23nietzsche', ).items(20):
-    print(tweet)
-    json.loads(tweet)
-    tweet = ast.literal_eval(tweet)
-    results.append(tweet)
+ try:
+    tso = TwitterSearchOrder()  # create a TwitterSearchOrder object
+    tso.set_keywords(['#freud', '-filter:retweets', '-filter:replies'])  # let's define all words we would like to have a look for
+    tso.set_language('en')  # we want to see english only
+    tso.set_include_entities(False)  # and don't give us all those entity information
+    tso.set_count(10)
+    tso.set_link_filter()  # filter hyper links
+    result_freud = []
 
-for tweet1 in tweepy.Cursor(api.search, tweet_mode="extended", id=None, q='%23freud').items(20):
-    json.loads(tweet1)
-    tweet1 = ast.literal_eval(tweet1)
-    results.append(tweet1)
+    ts = TwitterSearch(cons_key, cons_secret, access_token, access_token_secret)
 
-for tweet2 in tweepy.Cursor(api.search, tweet_mode="extended", id=None, q='%23russel').items(20):
-    json.loads(tweet2)
-    tweet3 = ast.literal_eval(tweet2)
-    results.append(tweet2)
+    for tweet in ts.search_tweets_iterable(tso):
+        tweets = tweet['text']
+        result_freud.append(tweets)
 
-for tweet3 in tweepy.Cursor(api.search, tweet_mode="extended", id=None, q='%23westernphil').items(20):
-    json.loads(tweet3)
-    tweet3 = ast.literal_eval(tweet3)
-    results.append(tweet3)
+ except TwitterSearchException as e:  # take care of all those ugly errors if there are some
+    print(e)
 
-'''
-    def on_status(self, status):
-       status.text
+    try:
+        tso = TwitterSearchOrder()  # create a TwitterSearchOrder object
+        tso.set_keywords(['#nietzsche', '-filter:retweets',
+                          '-filter:replies'])  # let's define all words we would like to have a look for
+        tso.set_language('en')  # we want to see english only
+        tso.set_include_entities(False)  # and don't give us all those entity information
+        tso.set_count(1)
+        tso.set_link_filter()  # filter hyper links
+        result_russel = []
 
-    def on_error(self, status_code):
-        if status_code == 420:
-            return False
+        ts = TwitterSearch(cons_key, cons_secret, access_token, access_token_secret)
 
-        # This handles Twitter authetification and the connection to Twitter Streaming API
-        # This line filter Twitter Streams to capture data by the keywords
+        for tweet in ts.search_tweets_iterable(tso):
+            tweets = '@%s tweeted: %s' % (tweet['user'], tweet['text'])
+            result_russel.append(tweets)
 
-    stream_listener = StreamListener()
-    stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
-    stream.filter(track=["#nietzsche", "#freud", "#russel", "#westernphilosophy"])
+    except TwitterSearchException as e:  # take care of all those ugly errors if there are some
+        print(e)
 
-'''
