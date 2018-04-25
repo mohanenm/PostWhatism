@@ -44,21 +44,24 @@ bot4.read(west_phil_text)
 westp_text = bot4.generate_text(25)
 
 
-print(freudTweets)t
+print(freudTweets)
 print(shakeTweets)
 print(russellTweets)
 print(westp_text)
 '''
 Keys/Tokens: 
 '''
+
+'''
 cons_key ='TRXh3CDSFBnPuZziANbqssl1l'
 cons_secret ='sIfuEEp6T8qluDkU3S9PLcINoIIqcp0SUTrnwVfvdWhNRlIS6G'
 access_token ='863265431691436032-PH9ASi1r3tfXJY90i4HuCVVpcLhUJ6D'
 access_token_secret ='POslJ4RgWsgL7BzUV1WY7xZaI9YXGMmSIFPwA2vcZt1Uf'
+'''
 
 '''
 Login, tweet-period
-'''
+
 bot.twitter_login(cons_key, cons_secret, access_token, access_token_secret)
 bot.twitter_tweeting_start(days=0, hours=5, minutes=0, keywords=None, prefix=None, suffix = "#Freud")
 bot2.twitter_login(cons_key, cons_secret, access_token, access_token_secret)
@@ -68,6 +71,6 @@ bot3.twitter_tweeting_start(days=0, hours=5, minutes=0, keywords=None, prefix=No
 bot4.twitter_login(cons_key, cons_secret, access_token, access_token_secret)
 bot4.twitter_tweeting_start(days=0, hours=5, minutes=0, keywords=None, prefix=None, suffix = "#WesternPhilosophy")
 time.sleep(6400)
-
-
 print(west_phil_text)
+'''
+
