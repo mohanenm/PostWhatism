@@ -41,14 +41,15 @@ class tweets_galore(TwitterSearch):
     tso.set_keywords(['#nietzsche', '-filter:retweets', '-filter:replies'])  # let's define all words we would like to have a look for
     tso.set_language('en')  # we want to see english only
     tso.set_include_entities(False)  # and don't give us all those entity information
-    tso.set_count(10)
+    tso.tweet_mode = 'extended'
+    tso.set_count(1)
     tso.set_link_filter()  # filter hyper links
     result_nietz = []
 
     ts = TwitterSearch(cons_key, cons_secret, access_token, access_token_secret)
 
     for tweet in ts.search_tweets_iterable(tso):
-        tweets = (tweet['text'])
+        tweets = (tweet['text'], 'nietzsche')
         result_nietz.append(tweets)
 
  except TwitterSearchException as e:  # take care of all those ugly errors if there are some
@@ -60,15 +61,16 @@ class tweets_galore(TwitterSearch):
     tso.set_keywords(['#freud', '-filter:retweets', '-filter:replies']) # let's define all words we would like to have a look for
     tso.add_keyword(['"', '"'], or_operator=True)
     tso.set_language('en')  # we want to see english only
-    tso.set_include_entities(False)  # and don't give us all those entity information
-    tso.set_count(10)
+    tso.set_include_entities(False) # and don't give us all those entity information
+    tso.tweet_mode='extended'
+    tso.set_count(1)
     tso.set_link_filter()  # filter hyper links
     result_freud = []
 
     ts = TwitterSearch(cons_key, cons_secret, access_token, access_token_secret)
 
     for tweet in ts.search_tweets_iterable(tso):
-        tweets = (tweet['text'])
+        tweets = (tweet['text'], 'freud')
         result_freud.append(tweets)
 
  except TwitterSearchException as e:  # take care of all those ugly errors if there are some
