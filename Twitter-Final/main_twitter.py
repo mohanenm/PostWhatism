@@ -101,12 +101,20 @@ clean_text0 = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True
                                no_phone_numbers=True, no_currency_symbols=True, no_punct=True, no_accents=True)
                for x in tweet_freud]
 
+
+y = tweet_nietzsche['text'].map(lambda x: 1 if x == 'nietzsche' else 0).values
+print(max(pd.Series(y).value_counts(normalize=True)))
+
+y = tweet_freud['text'].map(lambda x: 1 if x == 'freud' else 0).values
+print(max(pd.Series(y).value_counts(normalize=True)))
+
+
 tfv = TfidfVectorizer(ngram_range=(1, 2), max_features=2000)
-X = tfv.fit_transform(tweet_nietzsche).todense()
+X = tfv.fit_transform(clean_text).todense()
 print(X.shape)
 
 tfv = TfidfVectorizer(ngram_range=(1, 2), max_features=2000)
-X = tfv.fit_transform(tweet_freud).todense()
+X = tfv.fit_transform(clean_text0).todense()
 print(X.shape)
 
 
