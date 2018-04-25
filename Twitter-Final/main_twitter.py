@@ -43,6 +43,8 @@ clean_text1 = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True
 
 nietz_dataframe = pd.DataFrame(nietzsche_tweets)
 freud_dataframe = pd.DataFrame(freud_tweets)
+
+
 # russel_dataframe = pd.DataFrame(russel_tweets)
 # westPhil_dataframe = pd.DataFrame(western_tweets)
 
@@ -55,18 +57,19 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 
 # TfidfVectorizer to find ngrams!
-vect = TfidfVectorizer(ngram_range=(2, 5), stop_words='english')
+vect = TfidfVectorizer(ngram_range=(1, 2), stop_words='english')
 # One giant string of all tweets! -- > nietz
-summaries = "".join(nietz_dataframe)
+summaries = "".join(map(str, nietz_dataframe))
 ngrams_summaries = vect.build_analyzer()(summaries)
-Counter(ngrams_summaries).most_common(200)
-vect = TfidfVectorizer(ngram_range=(2, 5), stop_words='english')
+Counter(ngrams_summaries).most_common(20)
+
+vect = TfidfVectorizer(ngram_range=(1, 2), stop_words='english')
 
 # One giant string of all tweets! --> freud
-summaries = "".join(freud_dataframe)
+summaries = "".join(map(str, nietz_dataframe))
 ngrams_summaries = vect.build_analyzer()(summaries)
-Counter(ngrams_summaries).most_common(200)
-vect = TfidfVectorizer(ngram_range=(2, 5), stop_words='english')
+Counter(ngrams_summaries).most_common(20)
+vect = TfidfVectorizer(ngram_range=(1, 2), stop_words='english')
 
 # One giant string of all tweets! --> russel
 # summaries = "".join(russel_dataframe['text'])
@@ -88,18 +91,23 @@ vect = TfidfVectorizer(ngram_range=(2, 5), stop_words='english')
 from textacy.preprocess import preprocess_text
 
 # def clean_text():
-tweet_text = nietzsche_tweets
+tweet_nietzsche = nietzsche_tweets
 clean_text = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True,
                               no_phone_numbers=True, no_currency_symbols=True, no_punct=True, no_accents=True)
-              for x in tweet_text]
+              for x in tweet_nietzsche]
 
-tweet_text0 = freud_tweets
+tweet_freud = freud_tweets
 clean_text0 = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True, no_emails=True,
                                no_phone_numbers=True, no_currency_symbols=True, no_punct=True, no_accents=True)
-               for x in freud_tweets]
+               for x in tweet_freud]
 
-tfv = TfidfVectorizer(ngram_range=(2, 4), max_features=2000)
-X = tfv.fit_transform().todense()
+tfv = TfidfVectorizer(ngram_range=(1, 2), max_features=2000)
+X = tfv.fit_transform(tweet_nietzsche).todense()
 print(X.shape)
+
+tfv = TfidfVectorizer(ngram_range=(1, 2), max_features=2000)
+X = tfv.fit_transform(tweet_freud).todense()
+print(X.shape)
+
 
 # Just spent > 30 minutes trying to git pip install to trust scikit download!

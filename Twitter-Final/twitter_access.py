@@ -48,7 +48,7 @@ class tweets_galore(TwitterSearch):
     ts = TwitterSearch(cons_key, cons_secret, access_token, access_token_secret)
 
     for tweet in ts.search_tweets_iterable(tso):
-        tweets = tweet['text']
+        tweets = (tweet['text'])
         result_nietz.append(tweets)
 
  except TwitterSearchException as e:  # take care of all those ugly errors if there are some
@@ -57,7 +57,8 @@ class tweets_galore(TwitterSearch):
 
  try:
     tso = TwitterSearchOrder()  # create a TwitterSearchOrder object
-    tso.set_keywords(['#freud', '-filter:retweets', '-filter:replies'])  # let's define all words we would like to have a look for
+    tso.set_keywords(['#freud', '-filter:retweets', '-filter:replies']) # let's define all words we would like to have a look for
+    tso.add_keyword(['"', '"'], or_operator=True)
     tso.set_language('en')  # we want to see english only
     tso.set_include_entities(False)  # and don't give us all those entity information
     tso.set_count(10)
@@ -67,7 +68,7 @@ class tweets_galore(TwitterSearch):
     ts = TwitterSearch(cons_key, cons_secret, access_token, access_token_secret)
 
     for tweet in ts.search_tweets_iterable(tso):
-        tweets = tweet['text']
+        tweets = (tweet['text'])
         result_freud.append(tweets)
 
  except TwitterSearchException as e:  # take care of all those ugly errors if there are some
@@ -75,7 +76,7 @@ class tweets_galore(TwitterSearch):
 
     try:
         tso = TwitterSearchOrder()  # create a TwitterSearchOrder object
-        tso.set_keywords(['#nietzsche', '-filter:retweets',
+        tso.set_keywords(['#russel', '-filter:retweets',
                           '-filter:replies'])  # let's define all words we would like to have a look for
         tso.set_language('en')  # we want to see english only
         tso.set_include_entities(False)  # and don't give us all those entity information
@@ -86,7 +87,7 @@ class tweets_galore(TwitterSearch):
         ts = TwitterSearch(cons_key, cons_secret, access_token, access_token_secret)
 
         for tweet in ts.search_tweets_iterable(tso):
-            tweets = '@%s tweeted: %s' % (tweet['user'], tweet['text'])
+            tweets = '@%s tweeted: %s' % (['user'], tweet['text'])
             result_russel.append(tweets)
 
     except TwitterSearchException as e:  # take care of all those ugly errors if there are some
