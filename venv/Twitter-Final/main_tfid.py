@@ -1,9 +1,9 @@
+import os, sys
 import api_ver  # import api calls/search
-
-from .. import bot_bot_bot  # import parent
+# from venv import bot_bot_bot  # import parent
 
 '''fixed import issue!'''
-import os
+
 import time
 import re
 import collections
@@ -104,7 +104,7 @@ print(max(pd.Series(y).value_counts(normalize=True)))
 y = tweets['handle'].map(lambda x: 1 if x == 'freud' else 0).values
 print(max(pd.Series(y).value_counts(normalize=True)))
 
-tfv = TfidfVectorizer(ngram_range=(1, 2), max_features=2000)
+tfv = TfidfVectorizer(ngram_range=(2, 5), max_features=2000) # changed range
 X = tfv.fit_transform(clean_text).todense()
 print(X.shape)
 
@@ -134,19 +134,26 @@ print(1 - y.mean())
 estimator = LogisticRegression(penalty='l2', C=1.0)
 estimator.fit(X, y)
 
+
+# wait unitl count fixed
+# n_test = api_ver.tweets_galore.f_test
 n_test = [
-    # fill in
+ "To live is to suffer, to survive is to find some meaning in the suffering. #Nietzsche"
 ]
 
-f_test = [
-    # fill in
-]
+# wait unitl count fixed
+# f_test = api_ver.tweets_galore.f_test
 
 Xtest = tfv.transform(n_test)
 pd.DataFrame(estimator.predict_proba(Xtest), columns=["Proba_nietzsche", "Proba_freud"])
 
-Xtest = tfv.transform(f_test)
+Xtest = tfv.transform(n_test)
 pd.DataFrame(estimator.predict_proba(Xtest), columns=["Proba_nietzsche", "Proba_freud"])
+
+
+
+# tweet extraction
+
 
 # extracting tweets with highest niet, freud proba ==>
 
@@ -154,6 +161,7 @@ estimator.predict_proba(X)
 Probas_x = pd.DataFrame(estimator.predict_proba(X), columns=["Proba_nietzsche", "Proba_freud"])
 joined_x = pd.merge(tweets, Probas_x, left_index=True, right_index=True)
 print(joined_x)
+
 
 # actually printing those tweets out
 
@@ -172,7 +180,9 @@ for el in joined_n[joined_n['Proba_nietzsche'] == min(joined_n['Proba_nietzsche'
 # --> max
 joined_f = joined_x[joined_x['handle'] == "freud"]
 for el in joined_f[joined_n['Proba_freud'] == max(joined_f['Proba_freud'])]['text']:
+    print("MAX")
     print(el)
 # --> min
 for el in joined_f[joined_f['Proba_freud'] == min(joined_f['Proba_freud'])]['text']:
+    print("MIN")
     print(el)

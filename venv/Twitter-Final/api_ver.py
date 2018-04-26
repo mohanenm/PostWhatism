@@ -1,7 +1,6 @@
 import collections
 import datetime
 import os
-import pandas as pd
 import re
 import re
 import time
@@ -9,6 +8,7 @@ import time
 import nltk
 # from markovbot import MarkovBot
 import numpy as np
+import pandas as pd
 import tweepy
 import twitter
 from TwitterSearch import *
@@ -46,7 +46,7 @@ class tweets_galore(TwitterSearch):
         tso.set_language('en')  # we want to see english only
         tso.set_include_entities(False)  # and don't give us all those entity information
         tso.tweet_mode = 'extended'
-        tso.set_count(1)
+        tso.set_count(20)
         tso.set_link_filter()  # filter hyper links
         result_nietz = []
 
@@ -67,7 +67,7 @@ class tweets_galore(TwitterSearch):
         tso.set_language('en')  # we want to see english only
         tso.set_include_entities(False)  # and don't give us all those entity information
         tso.tweet_mode = 'extended'
-        tso.set_count(1)
+        tso.set_count(20)
         tso.set_link_filter()  # filter hyper links
         result_freud = []
 
@@ -80,13 +80,15 @@ class tweets_galore(TwitterSearch):
     except TwitterSearchException as e:  # take care of all those ugly errors if there are some
         print(e)
 
+
+"""
         try:
             tso = TwitterSearchOrder()  # create a TwitterSearchOrder object
             tso.set_keywords(['#russel', '-filter:retweets',
                               '-filter:replies'])  # let's define all words we would like to have a look for
             tso.set_language('en')  # we want to see english only
             tso.set_include_entities(False)  # and don't give us all those entity information
-            tso.set_count(1)
+            tso.set_count(0)
             tso.set_link_filter()  # filter hyper links
             result_russel = []
 
@@ -98,3 +100,25 @@ class tweets_galore(TwitterSearch):
 
         except TwitterSearchException as e:  # take care of all those ugly errors if there are some
             print(e)
+"""
+
+
+## for tests!
+
+''' 
+try:
+    tuo = TwitterUserOrder('NietzscheQuotes')
+    tuo.set_count(0)
+    tuo.set_exclude_replies(True)
+    tuo.set_include_rts(False)
+
+    f_test = []
+
+    ts = TwitterSearch(cons_key, cons_secret, access_token, access_token_secret)
+    for tweet in ts.search_tweets_iterable(tuo):
+        print((tweet['text']))
+        f_test.append(tweet)
+
+except TwitterSearchException as e:  # take care of all those ugly errors if there are some
+    print(e)
+'''
