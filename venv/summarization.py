@@ -4,7 +4,6 @@ import Twitter
 import bot_bot_bot.py
 
 
-
 class FrequencySummarizer:
     def __init__(self, min_cut=0.1, max_cut=0.9):
         """
