@@ -36,19 +36,19 @@ fTwo = (re.sub('[-,_[@?#*"%;()}0-9]', " ", data))
 fThree = (fTwo.replace("SCENE" "ACT", " "))
 finalSText = fThree'''
 
-shakeText = os.path.join(dirname, 'shakeComplete.txt')
+shakeText = os.path.join(dirname, 'training_txt/shakeComplete.txt')
 bot2.read(shakeText)
 shakeTweets = bot2.generate_text(25)
 
-west_phil_text = os.path.join(dirname, 'westPhil.txt')
+west_phil_text = os.path.join(dirname, 'training_txt/westPhil.txt')
 bot4.read(west_phil_text)
 westp_text = bot4.generate_text(25)
 
-russellText = os.path.join(dirname, 'russelMath.txt')
+russellText = os.path.join(dirname, 'rtraining_txt/usselMath.txt')
 bot3.read(russellText)
 russellTweets = bot3.generate_text(25)
 
-west_phil_text = os.path.join(dirname, 'westPhil.txt')
+west_phil_text = os.path.join(dirname, 'training_txt/westPhil.txt')
 bot4.read(west_phil_text)
 westp_text = bot4.generate_text(25)
 
