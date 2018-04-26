@@ -66,6 +66,29 @@ freudTweets_gen =  freudTeets
 nietz_text = nietz_text
 freud_text = freudText
 
+# similarity of the two text documents * --> generated tweet and actual writing and twiiter posts:
+# we can choose what we want to do
+
+import nltk, string
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+stemmer = nltk.stem.porter.PorterStemmer()
+remove_punctuation_map = dict((ord(char), None) for char in string.punctuation)
+
+def stem_tokens(tokens):
+    return [stemmer.stem(item) for item in tokens]
+
+'''Clean the text of the two documents we want to see the similarity of  '''
+def normalize(text):
+    return stem_tokens(nltk.word_tokenize(text.lower().translate(remove_punctuation_map)))
+
+vectorizer = TfidfVectorizer(tokenizer=normalize, stop_words='english')
+
+def cosine_sim(text1, text2):
+    tfidf = vectorizer.fit_transform([text1, text2])
+    return ((tfidf * tfidf.T).A)[0,1]
+
+
 
 '''
 Keys/Tokens: 
