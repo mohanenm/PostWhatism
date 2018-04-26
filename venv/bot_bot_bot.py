@@ -28,7 +28,7 @@ finalDataShake = fFour
 '''freud'''
 
 dirname = os.path.dirname(os.path.abspath(__file__))
-freudText = os.path.join(dirname, 'freudCompleteWorks.txt')
+freudText = os.path.join(dirname, 'training_txt/freudCompleteWorks.txt')
 bot.read(freudText)
 freudTweets =  bot.generate_text(25)
 '''
@@ -44,7 +44,7 @@ west_phil_text = os.path.join(dirname, 'training_txt/westPhil.txt')
 bot4.read(west_phil_text)
 westp_text = bot4.generate_text(25)
 
-russellText = os.path.join(dirname, 'rtraining_txt/usselMath.txt')
+russellText = os.path.join(dirname, 'rtraining_txt/russelMath.txt')
 bot3.read(russellText)
 russellTweets = bot3.generate_text(25)
 
