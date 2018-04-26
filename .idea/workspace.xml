@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08a721d7-58c5-46e2-8d2b-3b30f896db68" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/venv/summarization.py" afterPath="$PROJECT_DIR$/venv/summarization.py" />
+      <change beforePath="$PROJECT_DIR$/sys_path.py" afterPath="$PROJECT_DIR$/sys_path.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,8 +36,8 @@
       <file leaf-file-name="sys_path.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sys_path.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="10" lean-forward="true" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+            <state relative-caret-position="60">
+              <caret line="4" column="54" lean-forward="true" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -217,6 +217,11 @@
             <path>
               <item name="markovbot" type="b2602c69:ProjectViewProjectNode" />
               <item name="markovbot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="markovbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="markovbot" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -814,8 +819,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sys_path.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="10" lean-forward="true" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+        <state relative-caret-position="60">
+          <caret line="4" column="54" lean-forward="true" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
           <folding />
         </state>
       </provider>
