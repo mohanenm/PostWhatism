@@ -23,8 +23,8 @@
 import os.path
 import pkgutil
 import shutil
-import sys
 import struct
+import sys
 import tempfile
 
 # Useful for very coarse version differentiation.
@@ -42,6 +42,7 @@ try:
 except ImportError:
     _b85alphabet = (b"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     b"abcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~")
+
 
     def b85decode(b):
         _b85dec = [None] * 256
@@ -20643,7 +20644,6 @@ YYiwa+Wo&aUaCuNm0Rj{N6aWAK2mr5Uf=ogHpf<$?002B1001EX0000000000006duK2Z|@aA|NaUv_
 0000JecbR}%nmX>c!Jc4cm4Z*nhpWnyJ+V{c?>ZfA2ZcwcpMWpZC+WoBt^Wn?aJc~DCQ1^@s603ZP%0
 h?I>06JU~0000
 """
-
 
 if __name__ == "__main__":
     main()

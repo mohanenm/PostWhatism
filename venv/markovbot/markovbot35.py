@@ -19,15 +19,15 @@
 # along with markovbot.  If not, see <http://www.gnu.org/licenses/>.
 
 
+import copy
 # native imports
 import os
-import sys
-import copy
-import time
 import pickle
 import random
-from threading import Thread, Lock
+import sys
+import time
 from multiprocessing import Queue
+from threading import Thread, Lock
 
 # external imports
 # Twitter package: https://pypi.python.org/pypi/twitter
@@ -318,7 +318,7 @@ class MarkovBot():
                 if verbose:
                     self._message(u'generate_text',
                                   u"Ran into a bit of an error while generating text. Will make %d more attempts" % (
-                                              maxtries - attempts))
+                                          maxtries - attempts))
                 # If too many attempts were made, raise an error to stop
                 # making any further attempts
                 if attempts >= maxtries:
@@ -944,12 +944,12 @@ class MarkovBot():
                             database = u'en'
                             self._message(u'_autoreply',
                                           u"There was no database for detected language '%s', so I defaulted to '%s'." % (
-                                          lang, database))
+                                              lang, database))
                         else:
                             database = u'default'
                             self._message(u'_autoreply',
                                           u"There was no database for detected language '%s', nor for 'en', so I defaulted to '%s'." % (
-                                          lang, database))
+                                              lang, database))
                     # Randomly choose a database if a random database
                     # was requested. Never use an empty database,
                     # though (the while loop prevents this).
@@ -987,7 +987,7 @@ class MarkovBot():
                     elif database not in self.data.keys():
                         self._message(u'_autoreply', \
                                       u"Selected database '%s' does not exist, defaulting to: %s" % (
-                                      database, u'default'))
+                                          database, u'default'))
                         database = u'default'
                     elif self.data[database] == {}:
                         self._message(u'_autoreply', \
@@ -1150,7 +1150,7 @@ class MarkovBot():
                 else:
                     self._message(u'_autotweet', \
                                   u"Could not recognise the type of database '%s'; using '%s' instead." % (
-                                  self._tweetingdatabase, u'default'))
+                                      self._tweetingdatabase, u'default'))
                     database = u'default'
 
                 # Construct a prefix for this tweet. We use the
@@ -1464,7 +1464,7 @@ class MarkovBot():
         """
 
         # Report the reconnection attempt.
-        self._message(u'_twitter_reconnect', 
+        self._message(u'_twitter_reconnect',
                       u"Attempting to reconnect to Twitter.")
 
         # Raise an Exception if the twitter library wasn't imported
@@ -1481,5 +1481,5 @@ class MarkovBot():
         self._credentials = self._t.account.verify_credentials()
 
         # Report the reconnection success.
-        self._message(u'_twitter_reconnect', 
-                    u"Successfully reconnected to Twitter!")
+        self._message(u'_twitter_reconnect',
+                      u"Successfully reconnected to Twitter!")

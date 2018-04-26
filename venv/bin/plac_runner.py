@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 from __future__ import with_statement
+
 import os
-import sys
 import shlex
+import sys
+
 import plac
 
 
@@ -31,7 +33,7 @@ def run(fnames, cmd, verbose):
     test=('run plac test files', 'flag', 't'),
     fname='script to run (.py or .plac or .placet)',
     extra='additional arguments',
-    )
+)
 def main(verbose, interactive, multiline, serve, batch, test, fname=None,
          *extra):
     "Runner for plac tools, plac batch files and plac tests"
@@ -64,6 +66,8 @@ def main(verbose, interactive, multiline, serve, batch, test, fname=None,
         print('run %s plac test(s)' % (len(extra) + 1))
     else:
         baseparser.print_usage()
+
+
 main.add_help = False
 
 if __name__ == '__main__':

@@ -1,4 +1,5 @@
-import api_ver   # import api calls/search
+import api_ver  # import api calls/search
+
 from .. import bot_bot_bot  # import parent
 
 '''fixed import issue!'''
@@ -163,19 +164,15 @@ joined_n = joined_x[joined_x['handle'] == "nietzsche"]
 for el in joined_n[joined_n['Proba_nietzsche'] == max(joined_n['Proba_nietzsche'])]['text']:
     print(el)
 # --> min
-for el in joined_n[joined_n['Proba_nietzsche']==min(joined_n['Proba_nietzsche'])]['text']:
+for el in joined_n[joined_n['Proba_nietzsche'] == min(joined_n['Proba_nietzsche'])]['text']:
     print(el)
 
-#freud
+# freud
 
 # --> max
 joined_f = joined_x[joined_x['handle'] == "freud"]
 for el in joined_f[joined_n['Proba_freud'] == max(joined_f['Proba_freud'])]['text']:
     print(el)
 # --> min
-for el in joined_f[joined_f['Proba_freud']==min(joined_f['Proba_freud'])]['text']:
+for el in joined_f[joined_f['Proba_freud'] == min(joined_f['Proba_freud'])]['text']:
     print(el)
-
-
-
-

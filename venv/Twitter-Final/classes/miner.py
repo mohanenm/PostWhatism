@@ -4,19 +4,19 @@ import datetime
 # idea for, and implementation of "tweet miner from mike roman via: git_userid = elaiken3
 ''' Various things are changed to fit our model/objective'''
 
-#Import the necessary methods from tweepy library
+# Import the necessary methods from tweepy library
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 
-#Variables that contains the user credentials to access Twitter API
+# Variables that contains the user credentials to access Twitter API
 access_token = "ENTER YOUR ACCESS TOKEN"
 access_token_secret = "ENTER YOUR ACCESS TOKEN SECRET"
 consumer_key = "ENTER YOUR API KEY"
 consumer_secret = "ENTER YOUR API SECRET"
 
 
-#This is a basic listener that just prints received tweets to stdout.
+# This is a basic listener that just prints received tweets to stdout.
 class StdOutListener(StreamListener):
 
     def on_data(self, data):
@@ -28,14 +28,13 @@ class StdOutListener(StreamListener):
 
 
 if __name__ == '__main__':
-
-    #This handles Twitter authetification and the connection to Twitter Streaming API
+    # This handles Twitter authetification and the connection to Twitter Streaming API
     l = StdOutListener()
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     stream = Stream(auth, l)
 
-    #This line filter Twitter Streams to capture data by the keywords: 'python', 'javascript', 'ruby'
+    # This line filter Twitter Streams to capture data by the keywords: 'python', 'javascript', 'ruby'
     stream.filter(track=['python', 'javascript', 'ruby'])
 
 ''' 

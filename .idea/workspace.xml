@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08a721d7-58c5-46e2-8d2b-3b30f896db68" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/venv/bot_bot_bot.py" afterPath="$PROJECT_DIR$/venv/bot_bot_bot.py" />
-    </list>
+    <list default="true" id="08a721d7-58c5-46e2-8d2b-3b30f896db68" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,14 +11,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bot_bot_bot.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bot_bot_bot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/bot_bot_bot.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="139">
-              <caret line="72" column="59" lean-forward="true" selection-start-line="72" selection-start-column="59" selection-end-line="72" selection-end-column="59" />
+              <caret line="72" column="59" lean-forward="false" selection-start-line="72" selection-start-column="59" selection-end-line="72" selection-end-column="59" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="summarization.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/venv/summarization.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,16 +123,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="miner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Twitter-Final/classes/miner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -170,6 +168,7 @@
         <option value="$PROJECT_DIR$/venv/Twitter-Final/main_tfid.py" />
         <option value="$PROJECT_DIR$/additional_bots.py" />
         <option value="$PROJECT_DIR$/venv/bot_bot_bot.py" />
+        <option value="$PROJECT_DIR$/venv/summarization.py" />
       </list>
     </option>
   </component>
@@ -435,14 +434,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/training_txt/shakeComplete.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558090">
-          <caret line="37206" column="56" lean-forward="false" selection-start-line="37206" selection-start-column="56" selection-end-line="37206" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/example.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -841,10 +832,18 @@
     <entry file="file://$PROJECT_DIR$/venv/bot_bot_bot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
-          <caret line="72" column="59" lean-forward="true" selection-start-line="72" selection-start-column="59" selection-end-line="72" selection-end-column="59" />
+          <caret line="72" column="59" lean-forward="false" selection-start-line="72" selection-start-column="59" selection-end-line="72" selection-end-column="59" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/summarization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
