@@ -1,4 +1,5 @@
-import twitter_access
+import api_ver   # import api calls/search
+from .. import bot_bot_bot  # import parent
 
 '''fixed import issue!'''
 import os
@@ -13,7 +14,7 @@ import re, datetime, pandas as pd
 
 # number of tweets with the correct hash_tags!
 
-print(twitter_access.tweets_galore.result_nietz)
+print(api_ver.tweets_galore.result_nietz)
 
 '''
 tweet_text1 = russel_tweets
@@ -25,14 +26,14 @@ clean_text1 = [preprocess_text(x, fix_unicode=True, lowercase=True, no_urls=True
 ''' PUT TWEETS INTO A DATAFRAME!'''
 
 # nietzsche
-nietzsche_tweets = twitter_access.tweets_galore.result_nietz
+nietzsche_tweets = api_ver.tweets_galore.result_nietz
 # freud
-freud_tweets = twitter_access.tweets_galore.result_freud
+freud_tweets = api_ver.tweets_galore.result_freud
 # russel
-# russel_tweets = twitter_access.tweets_galore.result_russel
+# russel_tweets = api_ver.tweets_galore.result_russel
 
 # westernphil
-# western_tweets = twitter_access.tweets_galore.tweet3
+# western_tweets = api_ver.tweets_galore.tweet3
 
 # from ast import literal_eval as leval
 # nietzsche_tweetsF = leval(tweet)
@@ -172,7 +173,7 @@ joined_f = joined_x[joined_x['handle'] == "freud"]
 for el in joined_f[joined_n['Proba_freud'] == max(joined_f['Proba_freud'])]['text']:
     print(el)
 # --> min
-for el in joined_f[joined_f['Proba_Hillary']==min(joined_f['Proba_Hillary'])]['text']:
+for el in joined_f[joined_f['Proba_freud']==min(joined_f['Proba_freud'])]['text']:
     print(el)
 
 
