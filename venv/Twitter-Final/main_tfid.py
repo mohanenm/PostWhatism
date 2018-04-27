@@ -170,9 +170,11 @@ print(joined_x)
 # --> max
 joined_n = joined_x[joined_x['handle'] == "nietzsche"]
 for el in joined_n[joined_n['Proba_nietzsche'] == max(joined_n['Proba_nietzsche'])]['text']:
+    print("MAX")
     print(el)
 # --> min
 for el in joined_n[joined_n['Proba_nietzsche'] == min(joined_n['Proba_nietzsche'])]['text']:
+    print("MIN")
     print(el)
 
 # freud

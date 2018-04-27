@@ -46,7 +46,7 @@ class tweets_galore(TwitterSearch):
         tso.set_language('en')  # we want to see english only
         tso.set_include_entities(False)  # and don't give us all those entity information
         tso.tweet_mode = 'extended'
-        tso.set_count(20)
+        tso.set_count(100)
         tso.set_link_filter()  # filter hyper links
         result_nietz = []
 
@@ -67,7 +67,7 @@ class tweets_galore(TwitterSearch):
         tso.set_language('en')  # we want to see english only
         tso.set_include_entities(False)  # and don't give us all those entity information
         tso.tweet_mode = 'extended'
-        tso.set_count(20)
+        tso.set_count(100)
         tso.set_link_filter()  # filter hyper links
         result_freud = []
 
