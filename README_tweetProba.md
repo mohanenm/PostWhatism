@@ -18,8 +18,8 @@
          * #### MIN: Loving it, may b I get more in-jokes than most of, the few of my followers or following
       * #### Max, Min: 
       * #### Nietzsche: Sames goes for the likelihood of nietzsche tweets
-         * #### MAX: #Freud seems to need the link between neurotic #angst and the #nonhuman 
-         * #### MIN: Loving it, may b I get more in-jokes than most of, the few of my followers or following
+         * #### MAX: 
+         * #### MIN: 
   
 
 ```python
