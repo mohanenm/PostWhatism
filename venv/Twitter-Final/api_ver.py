@@ -63,7 +63,7 @@ class tweets_galore(TwitterSearch):
         tso = TwitterSearchOrder()  # create a TwitterSearchOrder object
         tso.set_keywords(['#freud', '-filter:retweets',
                           '-filter:replies'])  # let's define all words we would like to have a look for
-        tso.add_keyword(['"', '"'], or_operator=True)
+        tso.add_keyword(["", '"'], or_operator=False)
         tso.set_language('en')  # we want to see english only
         tso.set_include_entities(False)  # and don't give us all those entity information
         tso.tweet_mode = 'extended'

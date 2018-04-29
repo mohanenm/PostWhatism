@@ -1,10 +1,18 @@
 # from https://glowingpython.blogspot.com/2014/09/text-summarization-with-nltk.html AND NLTK DOCUMENTATION!
+import urllib.request
+from collections import defaultdict
+from heapq import nlargest
+from string import punctuation
 
-import Twitter
-import bot_bot_bot.py
+import nltk
+from bs4 import BeautifulSoup
+from nltk.corpus import stopwords
+from nltk.corpus import stopwords
+from nltk.tokenize import sent_tokenize, word_tokenize
 
 
 class FrequencySummarizer:
+
     def __init__(self, min_cut=0.1, max_cut=0.9):
         """
          Words that have a frequency term lower than min_cut
@@ -59,16 +67,26 @@ class FrequencySummarizer:
         """
         return nlargest(n, ranking, key=ranking.get)
 
+
+def get_only_text(url):
+    url_open = urllib.request.urlopen(url)
+    page = url.read(url_open).decode('utf8')
+    soup = BeautifulSoup(page)
+    text = ' '.join(map(lambda p: p.text, soup.find_all('p')))
+    return soup.title.text, text
+
     ### THIS IS WHERE WE PUT OUR TWEETS
 
-    def get_only_text(url):
-        """
-         "return the title and the text of the article
-         at the specified url"
 
-         We can ultimately decide what we want to release here !!
-        """
-        page = urllib2.urlopen(url).read().decode('utf8')
-        soup = BeautifulSoup(page)
-        text = ' '.join(map(lambda p: p.text, soup.find_all('p')))
-        return soup.title.text, text
+url = 'http://www.gutenberg.org/files/55443/55443-h/55443-h.htm'
+request = urllib.request.Request(url)
+response = urllib.request.urlopen(request)
+feed = BeautifulSoup(response.read().decode('utf-8'), "html5lib")
+to_summarize = [(map(lambda p: p.text, feed.find_all('guid')))
+                fs = FrequencySummarizer()
+for article_url in to_summarize[:5]:
+    title, text = get_only_text(article_url)
+print('----------------------------------')
+print(title)
+for s in fs.summarize(text, 2):
+    print('*', s)

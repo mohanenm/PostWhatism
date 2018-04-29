@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08a721d7-58c5-46e2-8d2b-3b30f896db68" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README_RepoGen" afterPath="$PROJECT_DIR$/README_RepoGen.md" />
-      <change beforePath="$PROJECT_DIR$/README_tweetProba.md" afterPath="$PROJECT_DIR$/README_tweetProba.md" />
       <change beforePath="$PROJECT_DIR$/venv/Twitter-Final/api_ver.py" afterPath="$PROJECT_DIR$/venv/Twitter-Final/api_ver.py" />
+      <change beforePath="$PROJECT_DIR$/venv/summarization.py" afterPath="$PROJECT_DIR$/venv/summarization.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sys_path.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys_path.py">
+      <file leaf-file-name="bot_bot_bot.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/bot_bot_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="54" lean-forward="false" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+            <state relative-caret-position="236">
+              <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -52,12 +51,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README_tweetProba.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README_tweetProba.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README_tweetProba.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="117">
-                <caret line="16" column="88" lean-forward="true" selection-start-line="16" selection-start-column="88" selection-end-line="16" selection-end-column="88" />
+              <first_editor relative-caret-position="209">
+                <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -81,8 +80,8 @@
       <file leaf-file-name="api_ver.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/Twitter-Final/api_ver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+            <state relative-caret-position="309">
+              <caret line="64" column="60" lean-forward="false" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -90,12 +89,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Twitter-Final/classes/main.py">
+      <file leaf-file-name="summarization.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/venv/summarization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1202">
-              <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="128">
+              <caret line="85" column="16" lean-forward="false" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+              <folding>
+                <element signature="e#108#129#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,8 +114,8 @@
       <file leaf-file-name="main_tfid.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/Twitter-Final/main_tfid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="895">
-              <caret line="120" column="22" lean-forward="true" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
+            <state relative-caret-position="241">
+              <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -176,12 +177,12 @@
         <option value="$PROJECT_DIR$/Twitter-Final/main_twitter.py" />
         <option value="$PROJECT_DIR$/additional_bots.py" />
         <option value="$PROJECT_DIR$/venv/bot_bot_bot.py" />
-        <option value="$PROJECT_DIR$/venv/summarization.py" />
         <option value="$PROJECT_DIR$/sys_path.py" />
-        <option value="$PROJECT_DIR$/venv/Twitter-Final/main_tfid.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/venv/Twitter-Final/api_ver.py" />
+        <option value="$PROJECT_DIR$/venv/Twitter-Final/main_tfid.py" />
         <option value="$PROJECT_DIR$/README_tweetProba.md" />
+        <option value="$PROJECT_DIR$/venv/Twitter-Final/api_ver.py" />
+        <option value="$PROJECT_DIR$/venv/summarization.py" />
       </list>
     </option>
   </component>
@@ -239,12 +240,6 @@
               <item name="markovbot" type="462c0819:PsiDirectoryNode" />
               <item name="venv" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="markovbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="markovbot" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="Twitter-Final" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -259,6 +254,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/venv" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Twitter-Final" />
     </key>
@@ -282,7 +278,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main_tfid">
+  <component name="RunManager" selected="Python.summarization">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -355,6 +351,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="summarization" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="markovbot" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/summarization.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="twitter_access" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -373,18 +387,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.main" />
       <item index="1" class="java.lang.String" itemvalue="Python.miner" />
       <item index="2" class="java.lang.String" itemvalue="Python.main_twitter" />
       <item index="3" class="java.lang.String" itemvalue="Python.twitter_access" />
       <item index="4" class="java.lang.String" itemvalue="Python.main_tfid" />
+      <item index="5" class="java.lang.String" itemvalue="Python.summarization" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.main_tfid" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main_twitter" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.summarization" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main_tfid" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main_twitter" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -748,22 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/bot_bot_bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="72" column="59" lean-forward="false" selection-start-line="72" selection-start-column="59" selection-end-line="72" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/summarization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys_path.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -829,10 +829,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README_tweetProba.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="209">
+            <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Twitter-Final/main_tfid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="120" column="22" lean-forward="true" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
+        <state relative-caret-position="241">
+          <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
@@ -841,22 +852,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Twitter-Final/api_ver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        <state relative-caret-position="309">
+          <caret line="64" column="60" lean-forward="false" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README_tweetProba.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="117">
-            <caret line="16" column="88" lean-forward="true" selection-start-line="16" selection-start-column="88" selection-end-line="16" selection-end-column="88" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/venv/bot_bot_bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/summarization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="85" column="16" lean-forward="false" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+          <folding>
+            <element signature="e#108#129#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
