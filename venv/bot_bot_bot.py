@@ -28,6 +28,14 @@ finalDataShake = fFour
 '''
 '''freud'''
 
+''' 
+i need to clean this up a lot and add organon
+- make methods more recycle --> code is stale
+- many authors at once with func 
+- add learning method --> possible neural net? I want to make training worthwhile....
+- add a score to output? compare results to text --> give score and only release the 'good' ones -> but also tell the model that it did a good or bad job
+'''
+
 dirname = os.path.dirname(os.path.abspath(__file__))
 freudText = os.path.join(dirname, 'training_txt/freudCompleteWorks.txt')
 bot.read(freudText)
@@ -37,6 +45,9 @@ fTwo = (re.sub('[-,_[@?#*"%;()}0-9]', " ", data))
 fThree = (fTwo.replace("SCENE" "ACT", " "))
 finalSText = fThree'''
 
+
+
+''' really????? this is no good, going to fix this week '''
 shakeText = os.path.join(dirname, 'training_txt/shakeComplete.txt')
 bot2.read(shakeText)
 shakeTweets = bot2.generate_text(25)
