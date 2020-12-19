@@ -3,10 +3,6 @@
 # For installation instructions and more information, please refer to:
 # http://www.pygaze.org/2016/03/tutorial-creating-a-twitterbot/
 # (This includes instructions to install the Twitter library used here)
-#
-# This file is part of markovbot, created by Edwin Dalmaijer
-# GitHub: https://github.com/esdalmaijer/markovbot
-#
 # Markovbot is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
