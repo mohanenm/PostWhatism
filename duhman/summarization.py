@@ -1,4 +1,4 @@
-# from https://glowingpython.blogspot.com/2014/09/text-summarization-with-nltk.html AND NLTK DOCUMENTATION!
+
 import urllib.request
 from collections import defaultdict
 from heapq import nlargest
