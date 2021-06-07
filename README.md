@@ -7,7 +7,7 @@
    ##### present in the text of the tweet
 2. #### Put tweets - and handle - into a pandas dataframe ==> concat both authors dataFrames - mark, annotate respectively
 3. #### Generate one long string of tweets and ngrams using tfid vectorizer - generate 'summaries' + ngrams
-4. #### Clean the text using NLTK & Textacy Chicago, IL
+4. #### Clean the text using NLTK & Textacy
 5. #### generate y axis for further use --> Extract features, again, using TFID vectorizer
 6. #### perform a search(grid) for optimal parameters: logistic regression & grid used - sci kit
 7. #### train by inserting tweets from Twitter Search into model, return confusion matrix
